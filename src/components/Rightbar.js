@@ -47,17 +47,16 @@ const RightBar = () => {
 				/>
 				<div className="trends">
 					News For You
-					{trends.map((e) => {
+					{trends.map((e, index) => {
 						return (
-							<>
-								<div
-									className="trend"
-									onClick={() => window.open(e.link)}
-								>
-									<img src={e.img} className="trendImg" />
-									<div className="trendText">{e.text}</div>
-								</div>
-							</>
+							<div
+								className="trend"
+								onClick={() => window.open(e.link)}
+								key={index}
+							>
+								<img src={e.img} className="trendImg" />
+								<div className="trendText">{e.text}</div>
+							</div>
 						);
 					})}
 				</div>
